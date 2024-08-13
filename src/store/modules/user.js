@@ -48,7 +48,7 @@ const actions = {
 		return new Promise((resolve, reject) => {
 			getInfo().then(response => {
 				const { result } = response
-
+				console.log(response)
 				if (!result) {
 					reject('Verification failed, please Login again.')
 				}
@@ -103,6 +103,7 @@ const actions = {
 	// dynamically modify permissions
 	async changeRoles({ commit, dispatch }, role) {
 		const token = role + '-token'
+		console.log('token' ,token)
 
 		commit('SET_TOKEN', token)
 		setToken(token)
